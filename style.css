@@ -1627,3 +1627,24 @@ form .btn-box {
         filter: blur(10px);
     }
 }
+.hidden-message {
+    position: absolute;
+    top: -25px; /* Adjust this value to move it up or down */
+    left: 10px;
+
+    padding: 2px 8px;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap; /* Keep text on one line */
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s; /* Smooth transition */
+}
+
+.visible-message {
+    opacity: 1;
+    visibility: visible;
+}

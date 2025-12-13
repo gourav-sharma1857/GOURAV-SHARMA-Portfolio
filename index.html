@@ -30,7 +30,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                 <!--<li><a href="#experience">Experience</a></li>
+                <!--<li><a href="#experience">Experience</a></li>-->
                 <li><a href="#education">Education</a></li>
                 <!--
                 <li><a href="#certifications">Certifications</a></li>
@@ -214,8 +214,8 @@
                     <div class="item" style="--position: 3"><img src="images/GITHUB.png" alt="Tech Icon 3"></div>
                     <div class="item" style="--position: 5"><img src="images/JS.png" alt="Tech Icon 5"></div>
                     <div class="item" style="--position: 6"><img src="images/AI.png" alt="Tech Icon 6"></div>
-                    <div class="item" style="--position: 7"><img src="images/python.png" alt="Tech Icon 7"></div>
-                    <div class="item" style="--position: 8"><img src="images/React.png" alt="Tech Icon 8"></div>
+                    <div class="item" style="--position: 7"><img src="images/PYTHON.png" alt="Tech Icon 7"></div>
+                    <div class="item" style="--position: 8"><img src="images/REACT.png" alt="Tech Icon 8"></div>
                     <div class="item" style="--position: 9"><img src="images/JAVA.png" alt="Tech Icon 9"></div>
                     <div class="item" style="--position: 10"><img src="images/GIT.png" alt="Tech Icon 11"></div>
                     <div class="item" style="--position: 11"><img src="images/SQL.png" alt="Tech Icon 12"></div>
@@ -437,13 +437,18 @@
 
 
                     </p>
-                    <div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://gourav-sharma1857.github.io/college-guide-app/" target="_blank" rel="noopener">
-                        <button>Website <i class='bx bx-link-external'></i></button>
-                    </a>
-                    <a href="https://github.com/gourav-sharma1857/college-guide-app" target="_blank" rel="noopener">
-                        <button>Github <i class='bx bxl-github'></i></button>
-                    </a>
+                    <div style="position: relative;"> <div id="button-container" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://gourav-sharma1857.github.io/college-guide-app/" target="_blank" rel="noopener" onclick="showMessage(event); return false;">
+                            <button>Website <i class='bx bx-link-external'></i></button>
+                        </a>
+                        <a href="https://github.com/gourav-sharma1857/college-guide-app" target="_blank" rel="noopener" onclick="showMessage(event); return false;">
+                            <button>Github <i class='bx bxl-github'></i></button>
+                        </a>
+                        </div>
+
+                        <span id="under-dev-message" class="hidden-message">
+                        Under Development
+                        </span>
                     </div>
                     
                     <div style="display: flex; gap: 10px; margin-top: 15px;">
@@ -490,7 +495,28 @@
         Message sent!
     </div>
 </section>
+<script>
+function showMessage(event) {
+    const message = document.getElementById('under-dev-message');
+    const buttonContainer = document.getElementById('button-container');
 
+    // 1. Position the message near the clicked element (optional, but helpful)
+    const buttonRect = event.currentTarget.getBoundingClientRect();
+    const containerRect = buttonContainer.getBoundingClientRect();
+    
+    // Set 'left' to the center of the clicked button
+    message.style.left = (buttonRect.left - containerRect.left + (buttonRect.width / 2) - (message.offsetWidth / 2)) + 'px';
+
+
+    // 2. Show the message
+    message.classList.add('visible-message');
+
+    // 3. Hide the message after 2 seconds
+    setTimeout(() => {
+        message.classList.remove('visible-message');
+    }, 2000); // 2000 milliseconds = 2 seconds
+}
+</script>
 <script>
     const form = document.getElementById('contact-form');
     const successMessage = document.getElementById('contact-success');
