@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourav's Portfolio</title>
+    <!-- Boxicons and AOS CSS (External CDN) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and Fira Code for terminal look -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Background Video -->
+        <video class="back-vid" autoplay loop muted playsinline src="images/galaxy.mp4"
+            onerror="this.parentElement.style.backgroundColor='#23001f7c38'; this.remove();"></video>
+
+        <!-- Header -->
+        <header data-aos="fade-down" data-aos-duration="2000">
+            <div class="left">
+                <h2><span style="color: #72a1dea2;">Gourav's Portfolio</span></h2>
+            </div>
+            <!-- Main Navigation (for desktop/larger tablets) -->
+            <ul id="main-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                 <!--<li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <!--
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#extracurriculars">Extracurriculars</a></li>
+                -->
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="box-icons">
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=jrjtXPWHxvRZjxvZXwrGrvWJHZkMrSJhbQHMxgggtdtQhFwQtQPkMfMMwjMsNQdmtndQCbCQ" target="_blank" rel="noopener" aria-label="Email">
+                    <p><i class='bx bxl-gmail'></i></p>
+                </a>
+                <a href="https://github.com/gourav-sharma1857" target="_blank" rel="noopener" aria-label="GitHub">
+                    <p><i class='bx bxl-github'></i></p>
+                </a>
+                <a href="https://www.linkedin.com/in/gourav-sharma-3b2558281/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <p><i class='bx bxl-linkedin-square'></i></p>
+                </a>
+            </div>
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <div id="mobile-menu-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Overlay (Initially hidden) -->
+        <div id="mobile-nav-overlay">
+            <i class='bx bx-x close-menu-icon'></i>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <!--<li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <!--
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#extracurriculars">Extracurriculars</a></li>
+                -->
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero content-section">
+            <div class="hero-info" data-aos="fade-right" data-aos-duration="1500">
+                <h3 class="hero-info-title">Welcome to My Portfolio!</h3>
+                <h1>Hello, I'm <span class="gradient">Gourav Sharma</span></h1>
+                <p>
+                    A passionate web developer and AI enthusiast, constantly building and learning
+                    new technologies to bring creative ideas to life. Explore my work and connect with
+                    me!
+                </p>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                    Contact Me <i class='bx bx-mail-send'></i>
+                </button>
+            </div>
+            <!-- Computer Screen Element -->
+            <div class="skills-video-box" data-aos="fade-left" data-aos-duration="1500">
+                <div class="computer-screen">
+                    <span id="typed-output" class="typed-text"></span><span class="cursor">|</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- About Section -->
+        <section id="about" class="info-section content-section">
+            <h1 class="section-title autoDisplay">About Me </h1>
+            <div class="about-content">
+                <div class="profile-photo-container" onmouseover="toggleGlasses(this)" onmouseout="toggleGlasses(this)">
+                    <img class="original-layer" src="images/Before.png" alt="Gourav Sharma">
+                    <img class="glasses-layer" src="images/hover_photo.png" alt="Gourav Sharma with Glasses">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-duration="1500">
+                    <p>
+                        Currently pursuing a Bachelor’s in Computer Science at UTD,
+                        where I’m constantly learning new concepts, building projects,
+                        and exploring different areas of tech.My journey in computer science and web development started from simple curiosity opening websites,
+                        inspecting pages, and trying to understand how everything worked. What began as fascination quickly grew into passion.
+                        As I learned HTML, CSS, and JavaScript, I realized how powerful it is to turn ideas into real, interactive experiences through code.
+
+                    </p>
+                    <p>
+                        Over time, my interests expanded beyond web development. I became
+                        captivated by Artificial Intelligence: the idea that machines can think, learn, and
+                        even create
+                        amazed me. The more I explored, the more I wanted to understand how AI works
+                        and what I
+                        could build with it.
+                    </p>
+                    <p>
+                        Now, I'm constantly seeking new challenges and opportunities to grow as a
+                        developer. Whether it's building user-friendly websites or experimenting with AI
+                        tools, I love
+                        turning creative ideas into real, functional projects. This is just the beginning, and
+                        I'm excited to
+                        see where this journey takes me.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section content-section">
+            <h1 class="section-title autoDisplay">My Skills </h1>
+            <div class="skills-content-wrapper">
+                <div class="skills-description autoDisplay">
+                    <p>
+                        I'm proficient in a range of programming languages, frameworks, and tools. My
+                        expertise spans frontend development, backend logic, and understanding core
+                        development
+                        workflows.
+                    </p>
+                </div>
+            </div>
+            <h3 class="skill-category-title autoDisplay">Programming Languages</h3>
+            <div class="skills-grid autoDisplay">
+                <div class="skill-card" data-skill-phrase="console.log(&quot;Hello, World!&quot;);">JavaScript (JS)</div>
+                <div class="skill-card" data-skill-phrase="print(&quot;Hello, World!&quot;);">Python</div>
+                <div class="skill-card" data-skill-phrase="System.out.println(&quot;Hello, World!&quot;);">Java</div>
+                <div class="skill-card" data-skill-phrase="std::cout &lt;&lt; &quot;Hello, World!&quot;;">C++</div>
+                <div class="skill-card" data-skill-phrase="&lt;p&gt; Hello, World!&lt;/p&gt;">HTML (markup)</div>
+                <div class="skill-card" data-skill-phrase="body { color: #fff; }">CSS (stylesheet)</div>
+                <div class="skill-card" data-skill-phrase="console.log(&quot;Hello, World!&quot;);">TypeScript</div>
+                <div class="skill-card" data-skill-phrase="SELECT &#39;Hello, World!&#39;;">SQL</div>
+            </div>
+            <h3 class="skill-category-title autoDisplay" style="margin-top: 50px;">Frontend Development</h3>
+            <div class="skills-grid autoDisplay">
+                <div class="skill-card" data-skill-phrase="Organizing web content with structure.">HTML</div>
+                <div class="skill-card" data-skill-phrase="Styling web pages with creativity.">CSS</div>
+                <div class="skill-card" data-skill-phrase="Styling web pages with creativity.">Tailwind CSS</div>
+                <div class="skill-card" data-skill-phrase="Adding interactivity to web pages.">JavaScript</div>
+                <div class="skill-card" data-skill-phrase="Building dynamic UIs with components.">React.js</div>
+                <div class="skill-card" data-skill-phrase="Full-stack React framework for production.">Next.js</div>
+                <div class="skill-card" data-skill-phrase="Inclusive and adaptable web experiences.">Accessibility & Responsive Design</div>
+            </div>
+            <h3 class="skill-category-title autoDisplay" style="margin-top: 50px;">Backend Development</h3>
+            <div class="skills-grid autoDisplay">
+                <div class="skill-card" data-skill-phrase="Server-side JavaScript runtime.">Node.js</div>
+                <div class="skill-card" data-skill-phrase="Microframework for web applications.">Flask (Python)</div>
+                <div class="skill-card" data-skill-phrase="Backend-as-a-Service for web/mobile.">Firebase</div>
+                <div class="skill-card" data-skill-phrase="Building serverless APIs within React.">Next.js (API routes)</div>
+                <div class="skill-card" data-skill-phrase="Securing user access and data.">Authentication/Authorization</div>
+            </div>
+            <h3 class="skill-category-title autoDisplay" style="margin-top: 50px; margin-bottom: 30px;">Tools & Workflow</h3>
+            <div class="skills-grid autoDisplay">
+                <div class="skill-card" data-skill-phrase="Version control for collaborative coding.">Git</div>
+                <div class="skill-card" data-skill-phrase="Platform for code hosting & collaboration.">GitHub</div>
+                <div class="skill-card" data-skill-phrase="A powerful and customizable code editor.">VS Code</div>
+            </div>
+            <!-- Slider for Technologies/Logos -->
+        <div class="slider" reverse="false" loop="true" style="--width: 100px; --height: 100px; --quantity: 24; margin-top: 50px;">
+                <div class="list">
+                    <div class="item" style="--position: 1"><img src="images/CSS.png" alt="Tech Icon 1"></div>
+                    <div class="item" style="--position: 2"><img src="images/HTML.png" alt="Tech Icon 2"></div>
+                    <div class="item" style="--position: 3"><img src="images/GITHUB.png" alt="Tech Icon 3"></div>
+                    <div class="item" style="--position: 5"><img src="images/JS.png" alt="Tech Icon 5"></div>
+                    <div class="item" style="--position: 6"><img src="images/AI.png" alt="Tech Icon 6"></div>
+                    <div class="item" style="--position: 7"><img src="images/python.png" alt="Tech Icon 7"></div>
+                    <div class="item" style="--position: 8"><img src="images/React.png" alt="Tech Icon 8"></div>
+                    <div class="item" style="--position: 9"><img src="images/JAVA.png" alt="Tech Icon 9"></div>
+                    <div class="item" style="--position: 10"><img src="images/GIT.png" alt="Tech Icon 11"></div>
+                    <div class="item" style="--position: 11"><img src="images/SQL.png" alt="Tech Icon 12"></div>
+                    <div class="item" style="--position: 12"><img src="images/NODE.png" alt="Tech Icon 13"></div>
+                    <div class="item" style="--position: 13"><img src="images/CODE.png" alt="Tech Icon 14"></div>
+                    <div class="item" style="--position: 14"><img src="images/C++.png" alt="Tech Icon 15"></div>
+                    <div class="item" style="--position: 15"><img src="images/GITHUB.png" alt="Tech Icon 17"></div>
+                    <div class="item" style="--position: 16"><img src="images/NET.png" alt="Tech Icon 18"></div>
+                    <div class="item" style="--position: 17"><img src="images/TYPE.png" alt="Tech Icon 19"></div>
+                    <div class="item" style="--position: 18"><img src="images/API.png" alt="Tech Icon 20"></div>
+                    <div class="item" style="--position: 19"><img src="images/IN.png" alt="Tech Icon 22"></div>
+                    <div class="item" style="--position: 20"><img src="images/AUTH.png" alt="Tech Icon 23"></div>
+                    <div class="item" style="--position: 21"><img src="images/FIGMA.png" alt="Tech Icon 24"></div>
+                    <!-- Duplicated items for seamless loop -->
+                    <div class="item" style="--position: 1"><img src="images/CSS.png" alt="Tech Icon 1"></div>
+                    <div class="item" style="--position: 2"><img src="images/HTML.png" alt="Tech Icon 2"></div>
+                    <div class="item" style="--position: 3"><img src="images/GITHUB.png" alt="Tech Icon 3"></div>
+                    <div class="item" style="--position: 5"><img src="images/JS.png" alt="Tech Icon 5"></div>
+                    <div class="item" style="--position: 6"><img src="images/AI.png" alt="Tech Icon 6"></div>
+                    <div class="item" style="--position: 7"><img src="images/python.png" alt="Tech Icon 7"></div>
+                    <div class="item" style="--position: 8"><img src="images/React.png" alt="Tech Icon 8"></div>
+                    <div class="item" style="--position: 9"><img src="images/JAVA.png" alt="Tech Icon 9"></div>
+                    <div class="item" style="--position: 10"><img src="images/GIT.png" alt="Tech Icon 11"></div>
+                    <div class="item" style="--position: 11"><img src="images/SQL.png" alt="Tech Icon 12"></div>
+                    <div class="item" style="--position: 12"><img src="images/NODE.png" alt="Tech Icon 13"></div>
+                    <div class="item" style="--position: 13"><img src="images/CODE.png" alt="Tech Icon 14"></div>
+                    <div class="item" style="--position: 14"><img src="images/C++.png" alt="Tech Icon 15"></div>
+                    <div class="item" style="--position: 15"><img src="images/GITHUB.png" alt="Tech Icon 17"></div>
+                    <div class="item" style="--position: 16"><img src="images/NET.png" alt="Tech Icon 18"></div>
+                    <div class="item" style="--position: 17"><img src="images/TYPE.png" alt="Tech Icon 19"></div>
+                    <div class="item" style="--position: 18"><img src="images/API.png" alt="Tech Icon 20"></div>
+                    <div class="item" style="--position: 19"><img src="images/IN.png" alt="Tech Icon 22"></div>
+                    <div class="item" style="--position: 20"><img src="images/AUTH.png" alt="Tech Icon 23"></div>
+                    <div class="item" style="--position: 21"><img src="images/FIGMA.png" alt="Tech Icon 24"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Experience Section 
+        
+        <section id="experience" class="experience-section content-section">
+            <h1 class="section-title autoDisplay">Work Experience </h1>
+            <div class="timeline-container">
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>...</h3>
+                        <p class="role">..</p>
+                        <p class="duration">...</p>
+                        <ul>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>..</h3>
+                        <p class="role">...</p>
+                        <p class="duration">...</p>
+                        <ul>
+                            <li>...</li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+        -->
+
+        <!-- Education Section -->
+        <section id="education" class="education-section content-section">
+            <h1 class="section-title autoDisplay">Education</h1>
+            <div class="timeline-container">
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>High School Diploma</h3>
+                        <p class="degree">Rock Hill High School</p>
+                        <p class="duration">August 2023 - May 2025</p>
+                        <ul>
+                            <li>Transferred from India in junior year and seamlessly integrated into the
+                                U.S. school system, maintaining strong academic performance across all
+                                subjects.</li>
+                            <li>Actively participated in various Math and Science UIL competitions;
+                                selected for the district team in Science UIL.</li>
+                            <li>Discovered a strong interest in Computer Science through hands-on
+                                projects and self-learning, which inspired a deeper exploration into web
+                                development and
+                                AI.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <p class="degree">University of Texas at Dallas</p>
+                        <p class="duration">August 2025 - May 29 (Expected)</p>
+                        <ul>
+                            <li>Strengthening core CS skills in programming, data structures, and problem-solving.</li>
+                            <li>Developing web applications and building a growing portfolio of practical projects.</li>
+                            <li>Preparing for internships and involvement in engineering and CS organizations on campus.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Certifications Section 
+        <section id="certifications" class="certifications-section content-section">
+            <h1 class="section-title autoDisplay">Certifications and Awards</h1>
+            <div class="timeline-container">
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>...</h3>
+                        <p class="issuer">...</p>
+                        <p class="date">...</p>
+                        <p>
+                           ...
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>...</h3>
+                        <p class="issuer">...</p>
+                        <p class="date">...</p>
+                        <p>
+                            ...
+                        </p>
+                    </div>
+                </div>
+                <!-- Add more certifications as needed
+        
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+         -->
+
+        <!-- Extracurriculars Section 
+        <section id="extracurriculars" class="extracurriculars-section content-section">
+            <h1 class="section-title autoDisplay">Extracurricular Activities </h1>
+            <div class="timeline-container">
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>...</h3>
+                        <p class="role">...</p>
+                        <p class="duration">...</p>
+                        <ul>
+                            <li>....</li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item autoDisplay">
+                    <div class="timeline-content">
+                        <h3>...</h3>
+                        <p class="role">...</p>
+                        <p class="duration">...</p>
+                        <ul>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+
+        <div class="section-divider"></div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="my-project content-section">
+            <h1 class="section-title autoDisplay">My Projects </h1>
+            <div class="project-card fadein-left">
+                <div class="project-vidbox autoBlur">
+                    <!-- Project Video -->
+                    <video width="100%" height="100%" autoplay muted loop playsinline controls>
+                        <source src="images/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h1>Gesture-<span class="gradient">Math</span> Website</h1>
+                    <p>
+                        Gesture-Math captures your fingertip using computer vision, converts your strokes into equations, and sends them to an AI engine for analysis.
+                        You get structured step-by-step solutions and auto-generated graphs instantly.
+                        Writing with your finger feels intuitive and removes the friction of typing or using a mouse.
+                        A seamless blend of CV + AI for a smoother math workflow.
+
+                    </p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+    
+                        <a href="https://github.com/gourav-sharma1857/Gesture-Math" target="_blank" rel="noopener">
+                        <button>Github <i class='bx bxl-github'></i></button>
+                        </a>
+                         </a>
+                    </div>
+                  
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <div style="background: #44cbda; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 1px solid #72a1de81;">
+                            Python 
+                        </div>
+                        <div style="background: #f1a32d; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 1px solid #72a1de81;">
+                            OpenCV
+                        </div>
+                        <div style="background: #c5d1e5; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 1px solid #72a1de81;">
+                            MediaPipe
+                        </div>
+                        <div style="background: #a4f715; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 1px solid #72a1de81;">
+                            HTML
+                        </div>
+                        <div style="background: #011d4e; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 1px solid #72a1de81;">
+                            CSS
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card fadein-left">
+                <div class="project-vidbox autoBlur">
+                    <img src="images/Project.png" alt="Project 2 Thumbnail">
+                </div>
+                <div class="project-info">
+                    <h1>College <span class="gradient">Dashboard</span> Website</h1>
+                    <p>
+                        This is a React-based web application designed to help students manage their 
+                        academic courses, assignments, skills, extracurricular activities
+                        , internships, job applications, contacts, and personal to-do lists.
+                         The application features a comprehensive GPA calculator that can factor in assignment weightages.
+                          All data is persistently stored in the browser's firebase. Firebase Auth also handles authentication and persistance across different devices.
+
+
+                    </p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://gourav-sharma1857.github.io/college-guide-app/" target="_blank" rel="noopener">
+                        <button>Website <i class='bx bx-link-external'></i></button>
+                    </a>
+                    <a href="https://github.com/gourav-sharma1857/college-guide-app" target="_blank" rel="noopener">
+                        <button>Github <i class='bx bxl-github'></i></button>
+                    </a>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <div style="background: #44cbda; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 2px solid #72a1de81;">
+                            React.js
+                        </div>
+                        <div style="background: #dbe45b; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 2px solid #72a1de81;">
+                            Firebase
+                        </div>
+                        <div style="background: #a4f715; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 2px solid #72a1de81;">
+                            HTML
+                        </div>
+                        <div style="background: #011d4e; color: #000000; border-radius: 8px; padding: 6px 14px; font-size: 0.95em; border: 2px solid #72a1de81;">
+                            CSS
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card fadein-left">
+                
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section content-section">
+    <h1 class="section-title autoDisplay">Let's Talk </h1>
+    <form id="contact-form" action="https://formspree.io/f/mrbkpenq" method="POST">
+        <div class="input-box">
+            <input type="text" name="full_name" placeholder="Your Full Name" required>
+        </div>
+        <div class="input-box">
+            <input type="email" name="email_address" placeholder="Your Email Address" required>
+        </div>
+        <div class="input-box">
+            <textarea name="message" rows="6" placeholder="Share your thoughts..." required></textarea>
+        </div>
+        <div class="btn-box">
+            <button type="submit">Send Message <i class='bx bx-mail-send'></i></button>
+        </div>
+    </form>
+    <div id="contact-success" style="display:none; color: #00ff00; font-size: 1.2em; margin-top: 30px;">
+        Message sent!
+    </div>
+</section>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('contact-success');
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Form submitted successfully
+                form.reset(); // Clear the form fields
+                successMessage.style.display = 'block'; // Show the success message
+                // Optionally, hide the success message after a few seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000); // Hide after 5 seconds
+            } else {
+                // Form submission failed
+                console.error('Form submission failed:', response.statusText);
+                // You might want to display an error message to the user here
+            }
+        } catch (error) {
+            console.error('Error during form submission:', error);
+            // You might want to display an error message to the user here
+        }
+    });
+</script>
+        <script>
+            // Contact form submission handler
+            document.addEventListener('DOMContentLoaded', function () {
+                const contactForm = document.getElementById('contact-form');
+                const contactSuccess = document.getElementById('contact-success');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        contactForm.style.display = 'none';
+                        contactSuccess.style.display = 'block';
+                    });
+                }
+            });
+        </script>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h1>©️ 2025 Gourav's Portfolio. </h1>
+            <div class="box-icons">
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=jrjtXPWHxvRZjxvZXwrGrvWJHZkMrSJhbQHMxgggtdtQhFwQtQPkMfMMwjMsNQdmtndQCbCQ" target="_blank" rel="noopener" aria-label="Email">
+                    <p><i class='bx bxl-gmail'></i></p>
+                </a>
+                <a href="https://github.com/gourav-sharma1857" target="_blank" rel="noopener" aria-label="GitHub">
+                    <p><i class='bx bxl-github'></i></p>
+                </a>
+                <a href="https://www.linkedin.com/in/gourav-sharma-3b2558281/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <p><i class='bx bxl-linkedin-square'></i></p>
+                </a>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top" title="Back to Top">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+    </div> <!-- End of .container -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // AOS initialization
+        AOS.init({
+            once: true,
+            duration: 1000
+        });
+
+        // About section - Photo with glasses effect
+        const profilePhotoContainer = document.querySelector('.profile-photo-container');
+        // Changed event listeners from touch to mouse for hover effect
+        profilePhotoContainer.onmouseover = function() { toggleGlasses(this); };
+        profilePhotoContainer.onmouseout = function() { toggleGlasses(this); };
+
+        function toggleGlasses(element) {
+            element.classList.toggle('with-glasses');
+        }
+
+        // Skill Card hover effect (Existing logic)
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards.forEach(card => {
+            const phraseText = card.getAttribute('data-skill-phrase');
+            if (phraseText) {
+                const skillPhraseElement = document.createElement('div');
+                skillPhraseElement.className = 'skill-phrase';
+                skillPhraseElement.innerHTML = phraseText;
+                card.appendChild(skillPhraseElement);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainHeader = document.querySelector('header');
+            const backToTopButton = document.getElementById('back-to-top');
+            const navLinks = document.querySelectorAll('#main-nav li a');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+            const closeMenuIcon = document.querySelector('.close-menu-icon');
+            const mobileNavLinks = document.querySelectorAll('#mobile-nav-overlay ul li a');
+
+            const contentSections = document.querySelectorAll('section');
+            const typedOutput = document.getElementById('typed-output');
+            const phrases = [
+                "// Powered by coffee and good intentions.",
+                "console.log(\"Error 404: Bad ideas not found.\");",
+                "// My superpower? Turning ideas into code.",
+                "/* Code, debug, repeat. (Also, eat snacks.) */",
+                "// Making the web a more awesome place, one pixel at a time.",
+                "import { innovation } from 'myBrain';",
+                "const creativity = () => 'always on, rarely conventional.';",
+                "// I turn complex problems into elegant solutions (and sometimes, more complex problems).",
+                "// Warning: Objects in portfolio are more impressive than they appear.",
+                "// My code runs on curiosity and a healthy dose of stubbornness.",
+                "// I develop responsive UIs.",
+                "console.log(\"Ready to debug your next big idea.\");",
+                "// Currently accepting coffee and challenging projects.",
+                "if (hungry) { code(); } else { codeMore(); }",
+                "import { awesome } from 'myPortfolio';",
+                "// I speak fluent caffeine and JavaScript.",
+                "const portfolio = () => 'where ideas come to life (and then get deployed).';",
+                "// Future-proofing your present, one line of code at a time.",
+                "/* My other car is also a computer. */"
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingSpeed = 100; // ms per character
+            const deletingSpeed = 50; // ms per character
+            const pauseBeforeDelete = 1500; // ms
+            const pauseBeforeType = 500; // ms
+
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                if (isDeleting) {
+                    typedOutput.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typedOutput.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let currentTypingSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    currentTypingSpeed = pauseBeforeDelete;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    currentTypingSpeed = pauseBeforeType;
+                }
+
+                setTimeout(typeWriter, currentTypingSpeed);
+            }
+
+            // Start typing animation when page loads
+            typeWriter();
+
+            // Intersection Observer for scroll animations (Existing logic)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            contentSections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // --- Function to handle smooth scrolling to a specific section ---
+            const scrollToSection = (sectionId) => {
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    const headerOffset = mainHeader.offsetHeight;
+                    const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset - 10;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            };
+
+            // --- Function to update the active navigation link based on scroll position ---
+            const updateActiveNavLink = () => {
+                let currentSectionId = '';
+                const scrollY = window.scrollY + mainHeader.offsetHeight + 50;
+
+                contentSections.forEach(section => {
+                    if (section.id && scrollY >= section.offsetTop && scrollY < section.offsetTop + section.offsetHeight) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                // Update active class for desktop/compact navigation
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href').substring(1) === currentSectionId) {
+                        link.classList.add('active', 'bg-red-600');
+                        link.classList.remove('hover:bg-gray-700');
+                    } else {
+                        link.classList.remove('active', 'bg-red-600');
+                        link.classList.add('hover:bg-gray-700');
+                    }
+                });
+
+                // Update active class for mobile navigation
+                mobileNavLinks.forEach(link => {
+                    if (link.getAttribute('href').substring(1) === currentSectionId) {
+                        link.classList.add('active', 'bg-red-600');
+                        link.classList.remove('hover:bg-gray-700');
+                    } else {
+                        link.classList.remove('active', 'bg-red-600');
+                        link.classList.add('hover:bg-gray-700');
+                    }
+                });
+            };
+
+            // Add click event listeners to desktop navigation links for smooth scrolling
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('href').substring(1);
+                    scrollToSection(sectionId);
+                    navLinks.forEach(l => {
+                        l.classList.remove('active', 'bg-red-600');
+                        l.classList.add('hover:bg-gray-700');
+                    });
+                    link.classList.add('active', 'bg-red-600');
+                    link.classList.remove('hover:bg-gray-700');
+                });
+            });
+
+            // Add click event listeners to mobile navigation links for smooth scrolling AND closing the menu
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('href').substring(1);
+                    scrollToSection(sectionId);
+                    mobileNavOverlay.classList.remove('active'); // Close mobile menu after clicking
+                    mobileNavLinks.forEach(l => {
+                        l.classList.remove('active', 'bg-red-600');
+                        l.classList.add('hover:bg-gray-700');
+                    });
+                    link.classList.add('active', 'bg-red-600');
+                    link.classList.remove('hover:bg-gray-700');
+                });
+            });
+
+
+            // --- Dynamic Header on Scroll --- (Existing logic)
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    mainHeader.classList.remove('shadow-lg');
+                    mainHeader.classList.add('shadow-xl', 'bg-opacity-90', 'backdrop-blur-sm');
+                } else {
+                    mainHeader.classList.remove('bg-opacity-90', 'backdrop-blur-sm', 'shadow-xl');
+                    mainHeader.classList.add('shadow-lg');
+                }
+
+                // --- Show/Hide Back to Top Button --- (Existing logic)
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+
+                updateActiveNavLink();
+            });
+
+            // --- Back to Top Button Click Event --- (Existing logic)
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileNavOverlay.classList.add('active');
+            });
+
+            closeMenuIcon.addEventListener('click', () => {
+                mobileNavOverlay.classList.remove('active');
+            });
+
+
+            // Initial display setup: set active nav link and scroll if a hash exists in the URL
+            const initialSectionId = window.location.hash ? window.location.hash.substring(1) : 'home';
+            scrollToSection(initialSectionId);
+            updateActiveNavLink();
+
+            // Handle browser back/forward buttons (re-triggers scroll and active link update)
+            window.addEventListener('hashchange', () => {
+                const currentHashSection = window.location.hash ? window.location.hash.substring(1) : 'home';
+                scrollToSection(currentHashSection);
+                updateActiveNavLink();
+            });
+        });
+    </script>
+</body>
+</html>
