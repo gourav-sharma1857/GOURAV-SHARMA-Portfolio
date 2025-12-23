@@ -19,7 +19,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 70px; /* Reduced gap between sections */
+    gap: 70px; 
     min-height: 100vh;
 }
 
@@ -32,9 +32,9 @@ html {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Place behind other content */
-    mix-blend-mode: overlay; /* Blends with background color */
-    object-fit: cover; /* Ensures video covers the area */
+    z-index: -1; 
+    mix-blend-mode: overlay; 
+    object-fit: cover; 
 }
 
 /* Header Styling */
@@ -66,7 +66,7 @@ header .left img {
 }
 
 header ul {
-    display: flex; /* Default for desktop and larger tablets */
+    display: flex; 
     justify-content: space-between;
     padding: 15px;
     border-radius: 50px;
@@ -77,7 +77,7 @@ header ul {
 
 header ul li {
     list-style: none;
-    flex-shrink: 0; /* Prevent list items from shrinking */
+    flex-shrink: 0; 
 }
 
 header ul a {
@@ -88,7 +88,7 @@ header ul a {
     margin: 0 10px;
     padding: 8px 12px;
     border-radius: 25px;
-    white-space: nowrap; /* Ensure text stays on one line */
+    white-space: nowrap; 
 }
 
 header ul a:hover,
@@ -123,7 +123,7 @@ header ul a.active {
 
 /* Mobile Menu Specific Styles - Hidden by default */
 #mobile-menu-toggle {
-    display: none; /* Hidden by default, shown in mobile media query */
+    display: none; 
     font-size: 30px;
     color: white;
     cursor: pointer;
@@ -131,7 +131,7 @@ header ul a.active {
 }
 
 #mobile-nav-overlay {
-    display: none; /* Hidden by default, shown when active */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -163,7 +163,7 @@ header ul a.active {
 }
 
 #mobile-nav-overlay ul li {
-    list-style: none; /* Ensure no bullets in mobile menu */
+    list-style: none; 
     margin: 15px 0;
 }
 
@@ -202,7 +202,7 @@ header ul a.active {
 }
 
 .hero-info {
-    position: absolute; /* Default for desktop */
+    position: absolute; 
     left: 5%;
     top: 50%;
     transform: translateY(-50%);
@@ -269,7 +269,7 @@ header ul a.active {
 
 /* Computer Screen Styling */
 .skills-video-box {
-    position: absolute; /* Default for desktop */
+    position: absolute; 
     right: 3%;
     top: 50%;
     transform: translateY(-50%);
@@ -913,7 +913,6 @@ form .btn-box {
     gap: 20px;
 }
 
-/* Re-styling .box-icons p for footer to override previous styles if needed */
 .footer .box-icons p {
     font-size: 20px;
     width: 35px;
@@ -1184,14 +1183,15 @@ form .btn-box {
         width: auto;
         margin: 0 auto 20px;
     }
-    .skills-video-box { /* Adjusted for mobile view */
-        position: relative; /* Change to relative positioning within .hero */
-        top: auto;
-        right: auto;
-        transform: none; /* Remove transformations */
-        width: 90%; /* Take up most of the width */
-        height: 200px; /* Fixed height for mobile */
-        margin: 40px auto 0 auto; /* Center it horizontally */
+    .skills-video-box { /* Desktop positioning */
+        position: absolute;
+        right: 3%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35vw;
+        height: 25vh;
+        max-width: 450px;
+        max-height: 300px;
     }
     .computer-screen { /* Adjust font size further for smaller mobile screens */
         font-size: 0.9em; /* Even smaller font size for mobile */
