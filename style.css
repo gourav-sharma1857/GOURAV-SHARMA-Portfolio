@@ -1417,6 +1417,19 @@ form .btn-box {
     .project-info {
         width: 100%;
     }
+    .back-vid {
+        mix-blend-mode: normal !important; /* remove overlay blending */
+        filter: none !important;           /* remove any filters */
+    }
+
+    .skills-video-box {
+        box-shadow: none !important;       /* remove inner/outer glow */
+        border: 2px solid #555;            /* keep a simple border */
+    }
+
+    .computer-screen {
+        font-size: 0.9em;                  /* keep code readable */
+    }
     .my-project {
         margin-bottom: 30px;
     }
