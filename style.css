@@ -12,6 +12,147 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ========================================
+   CUSTOM SCROLLBAR - ULTRA COOL
+   ======================================== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #0a0014, #1a0033);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #72a1de, #2a46ff);
+    border-radius: 10px;
+    border: 2px solid #0a0014;
+    box-shadow: 0 0 10px rgba(114, 161, 222, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #44cbda, #6600c5);
+    box-shadow: 0 0 20px rgba(114, 161, 222, 0.8);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #72a1de #0a0014;
+}
+
+/* ========================================
+   RUNNING CAT EASTER EGG
+   ======================================== */
+#running-cat {
+    position: fixed;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    animation: catRun 15s linear infinite;
+}
+
+#running-cat:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+}
+
+@keyframes catRun {
+    0% {
+        left: -100px;
+        transform: scaleX(1);
+    }
+    48% {
+        left: calc(100% - 60px);
+        transform: scaleX(1);
+    }
+    50% {
+        left: calc(100% - 60px);
+        transform: scaleX(-1);
+    }
+    98% {
+        left: -100px;
+        transform: scaleX(-1);
+    }
+    100% {
+        left: -100px;
+        transform: scaleX(1);
+    }
+}
+
+/* Cat message tooltip */
+.cat-message {
+    position: fixed;
+    background: linear-gradient(135deg, #72a1de, #44cbda);
+    color: #000;
+    padding: 15px 25px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cat-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cat-message::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #44cbda;
+}
+
+/* ========================================
+   FLOATING PARTICLES BACKGROUND
+   ======================================== */
+.particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatParticle 10s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+    }
+}
+
 /* Container for the entire site */
 .container {
     position: relative;
@@ -37,7 +178,9 @@ html {
     object-fit: cover; 
 }
 
-/* Header Styling */
+/* ========================================
+   HEADER STYLING
+   ======================================== */
 header {
     display: flex;
     position: fixed;
@@ -150,14 +293,15 @@ header ul a.active {
 
 .box-icons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
-.box-icons p {
+.box-icons p,
+.box-icons a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 15px;
     width: 35px;
     height: 35px;
     border: 2px solid midnightblue;
@@ -165,6 +309,8 @@ header ul a.active {
     cursor: pointer;
     transition: all 0.4s ease;
     animation: iconPop 0.5s ease-out backwards;
+    color: white;
+    text-decoration: none;
 }
 
 @keyframes iconPop {
@@ -178,18 +324,24 @@ header ul a.active {
     }
 }
 
-.box-icons p:nth-child(1) { animation-delay: 0.1s; }
-.box-icons p:nth-child(2) { animation-delay: 0.2s; }
-.box-icons p:nth-child(3) { animation-delay: 0.3s; }
+.box-icons p:nth-child(1),
+.box-icons a:nth-child(1) { animation-delay: 0.1s; }
+.box-icons p:nth-child(2),
+.box-icons a:nth-child(2) { animation-delay: 0.2s; }
+.box-icons p:nth-child(3),
+.box-icons a:nth-child(3) { animation-delay: 0.3s; }
+.box-icons p:nth-child(4),
+.box-icons a:nth-child(4) { animation-delay: 0.4s; }
 
-.box-icons p:hover {
+.box-icons p:hover,
+.box-icons a:hover {
     background-color: midnightblue;
     color: black;
     box-shadow: 0 0 15px midnightblue;
     transform: translateY(-5px) rotate(360deg);
 }
 
-/* Mobile Menu Specific Styles */
+/* Mobile Menu */
 #mobile-menu-toggle {
     display: none; 
     font-size: 30px;
@@ -246,6 +398,8 @@ header ul a.active {
 #mobile-nav-overlay ul li:nth-child(3) { animation-delay: 0.3s; }
 #mobile-nav-overlay ul li:nth-child(4) { animation-delay: 0.4s; }
 #mobile-nav-overlay ul li:nth-child(5) { animation-delay: 0.5s; }
+#mobile-nav-overlay ul li:nth-child(6) { animation-delay: 0.6s; }
+#mobile-nav-overlay ul li:nth-child(7) { animation-delay: 0.7s; }
 
 @keyframes slideInRight {
     from {
@@ -291,7 +445,9 @@ header ul a.active {
     transform: rotate(90deg) scale(1.2);
 }
 
-/* Hero Section - FIXED FOR ALL SCREEN SIZES */
+/* ========================================
+   HERO SECTION - FIXED FOR ALL SIZES
+   ======================================== */
 .hero {
     position: relative;
     display: flex;
@@ -299,15 +455,14 @@ header ul a.active {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding-top: 70px;
-    padding-bottom: 50px;
+    padding: 100px 5% 50px;
     box-sizing: border-box;
+    gap: 5%;
 }
 
 .hero-info {
     flex: 1;
     max-width: 600px;
-    padding: 0 5%;
     z-index: 2;
     animation: fadeInUp 1s ease-out;
 }
@@ -415,12 +570,12 @@ header ul a.active {
     }
 }
 
-/* Computer Screen - FIXED FOR ALL SIZES */
+/* Computer Screen - REDUCED SIZE */
 .skills-video-box {
-    flex: 1;
-    max-width: 500px;
+    flex: 0 0 auto;
+    max-width: 350px;
     width: 100%;
-    height: 300px;
+    height: 220px;
     background-color: #1a1a1a;
     border: 2px solid #555;
     border-radius: 15px;
@@ -429,9 +584,8 @@ header ul a.active {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
-    margin: 0 5%;
     z-index: 2;
     animation: fadeInRight 1s ease-out 0.3s backwards;
 }
@@ -452,7 +606,7 @@ header ul a.active {
     height: 100%;
     font-family: 'Fira Code', monospace;
     color: #00ff00;
-    font-size: clamp(0.8em, 1.5vw, 1em);
+    font-size: clamp(0.7em, 1.2vw, 0.85em);
     line-height: 1.4;
     white-space: pre-wrap;
     overflow: hidden;
@@ -534,7 +688,9 @@ header ul a.active {
     100% { top: 90%; opacity: 0; }
 }
 
-/* Section Styling */
+/* ========================================
+   SECTION STYLING - CONSISTENT
+   ======================================== */
 .info-section,
 .my-project,
 .skills-section,
@@ -551,10 +707,11 @@ header ul a.active {
     margin: 50px auto;
     padding: 40px 20px;
     box-sizing: border-box;
-    background-color: rgba(8, 0, 32, 0.729);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(114, 161, 222, 0.2);
+    background: linear-gradient(135deg, rgba(8, 0, 32, 0.9), rgba(34, 0, 73, 0.8));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(114, 161, 222, 0.3);
     transition: all 0.3s ease;
+    border: 1px solid rgba(114, 161, 222, 0.2);
 }
 
 .info-section:hover,
@@ -565,8 +722,9 @@ header ul a.active {
 .education-section:hover,
 .certifications-section:hover,
 .extracurriculars-section:hover {
-    box-shadow: 0 0 40px rgba(114, 161, 222, 0.4);
+    box-shadow: 0 0 50px rgba(114, 161, 222, 0.5);
     transform: translateY(-5px);
+    border-color: rgba(114, 161, 222, 0.5);
 }
 
 .section-title {
@@ -608,6 +766,79 @@ header ul a.active {
     50% {
         width: 150px;
     }
+}
+
+/* ========================================
+   ABOUT SECTION - PROFILE ON RIGHT
+   ======================================== */
+.about-content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.profile-photo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(114, 161, 222, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex-shrink: 0;
+    animation: photoFloat 3s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+.profile-photo-container:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 50px rgba(114, 161, 222, 0.9);
+}
+
+.profile-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.profile-photo-container .glasses-layer {
+    opacity: 0;
+}
+
+.profile-photo-container.with-glasses .original-layer {
+    opacity: 0;
+}
+
+.profile-photo-container.with-glasses .glasses-layer {
+    opacity: 1;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
 }
 
 /* Info Cards */
@@ -726,7 +957,9 @@ header ul a.active {
     border-color: #72a1de;
 }
 
-/* Project Cards */
+/* ========================================
+   PROJECT CARDS - FIXED FOR MOBILE
+   ======================================== */
 .my-project {
     margin-bottom: 100px;
     gap: 50px;
@@ -736,18 +969,20 @@ header ul a.active {
     display: flex;
     width: 100%;
     align-items: center;
-    gap: 5%;
+    gap: 30px;
     justify-content: center;
     background-color: rgba(8, 0, 32, 0.6);
     border-radius: 15px;
-    padding: 25px;
+    padding: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     flex-wrap: wrap;
     transition: all 0.3s ease;
+    border: 1px solid rgba(114, 161, 222, 0.2);
 }
 
 .project-card:hover {
-    box-shadow: 0 0 30px rgba(114, 161, 222, 0.5);
+    box-shadow: 0 0 40px rgba(114, 161, 222, 0.6);
+    border-color: rgba(114, 161, 222, 0.5);
 }
 
 .project-vidbox {
@@ -756,7 +991,7 @@ header ul a.active {
     justify-content: center;
     width: 100%;
     max-width: 500px;
-    min-width: 280px;
+    min-width: 250px;
     position: relative;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -770,12 +1005,12 @@ header ul a.active {
     height: 250px;
     border-radius: 20px;
     transition: all 0.5s ease;
-    box-shadow: 0 0 10px lightgray;
+    box-shadow: 0 0 15px lightgray;
 }
 
 .project-card .project-vidbox:hover img,
 .project-card .project-vidbox:hover video {
-    box-shadow: 0 0 30px rgb(255, 255, 255);
+    box-shadow: 0 0 40px rgb(114, 161, 222);
     transform: scale(1.05);
 }
 
@@ -788,7 +1023,7 @@ header ul a.active {
     max-width: 600px;
     padding: 0 20px;
     box-sizing: border-box;
-    min-width: 280px;
+    min-width: 250px;
 }
 
 .project-info h1 {
@@ -807,20 +1042,24 @@ header ul a.active {
     color: #ccc;
 }
 
-.project-info button {
+.project-info button,
+.project-info a button {
     color: white;
-    padding: 15px 35px;
+    padding: 12px 30px;
     border-radius: 10px;
     border: 1px solid #72a1de81;
     background-color: #2200493d;
     box-shadow: 0 0 5px midnightblue;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 15px;
 }
 
-.project-info button:hover {
-    box-shadow: 0 0 20px #72a1de81;
+.project-info button:hover,
+.project-info a button:hover {
+    box-shadow: 0 0 25px #72a1de81;
     transform: translateY(-3px);
+    background-color: rgba(114, 161, 222, 0.3);
 }
 
 .project-vidbox .hover-sign {
@@ -1267,77 +1506,12 @@ form .btn-box {
     transform: translateY(-5px) rotate(360deg);
 }
 
-/* About Section */
-.about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-}
-
-.profile-photo-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(114, 161, 222, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    flex-shrink: 0;
-    animation: photoFloat 3s ease-in-out infinite;
-}
-
-@keyframes photoFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.profile-photo-container:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 40px rgba(114, 161, 222, 0.8);
-}
-
-.profile-photo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.profile-photo-container .glasses-layer {
-    opacity: 0;
-}
-
-.profile-photo-container.with-glasses .original-layer {
-    opacity: 0;
-}
-
-.profile-photo-container.with-glasses .glasses-layer {
-    opacity: 1;
-}
-
-.about-text {
-    max-width: 800px;
-    text-align: center;
-    line-height: 1.8;
-    color: #e0e0e0;
-}
-
 /* Back to top button */
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #e50914;
+    background: linear-gradient(135deg, #e50914, #8B5CF6);
     color: white;
     padding: 12px 16px;
     border-radius: 9999px;
@@ -1360,8 +1534,8 @@ form .btn-box {
 }
 
 #back-to-top:hover {
-    background-color: #ff1a1a;
-    transform: translateY(-5px);
+    background: linear-gradient(135deg, #ff1a1a, #a855f7);
+    transform: translateY(-5px) rotate(360deg);
     box-shadow: 0 8px 15px rgba(229, 9, 20, 0.5);
 }
 
@@ -1512,12 +1686,15 @@ form .btn-box {
 
 .resume-btn {
     padding: 8px 16px;
-    border-radius: 8px;
     background: linear-gradient(135deg, #72a1de, #44cbda);
     color: black;
-    font-weight: 600;
+    font-weight: 200;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .resume-btn:hover {
@@ -1526,14 +1703,14 @@ form .btn-box {
 }
 
 /* ============================================
-   RESPONSIVE MEDIA QUERIES - FIXED
+   RESPONSIVE MEDIA QUERIES
    ============================================ */
 
 /* Large Desktop (1400px+) */
 @media screen and (min-width: 1400px) {
     .hero {
-        flex-direction: row;
         justify-content: space-around;
+        gap: 8%;
     }
     
     .hero-info {
@@ -1541,17 +1718,15 @@ form .btn-box {
     }
     
     .skills-video-box {
-        max-width: 600px;
-        height: 350px;
+        max-width: 400px;
+        height: 250px;
     }
 }
 
 /* Desktop (1024px - 1399px) */
-@media screen and (min-width: 1024px) and (max-width: 1399px) {
+@media screen and (min-width: 1024px) {
     header ul#main-nav {
         display: flex;
-        flex-direction: row;
-        padding: 15px;
     }
     
     #mobile-menu-toggle {
@@ -1565,22 +1740,11 @@ form .btn-box {
     .hero {
         flex-direction: row;
         justify-content: space-between;
-        padding: 70px 3%;
-    }
-    
-    .hero-info {
-        max-width: 500px;
-    }
-    
-    .skills-video-box {
-        max-width: 450px;
-        height: 280px;
     }
     
     .about-content {
-        flex-direction: row;
+        flex-direction: row-reverse;
         text-align: left;
-        justify-content: center;
     }
     
     .about-text {
@@ -1598,11 +1762,13 @@ form .btn-box {
     
     .project-vidbox {
         width: 45%;
-        max-width: 450px;
+        max-width: 500px;
     }
     
     .project-info {
         width: 50%;
+        text-align: left;
+        align-items: flex-start;
     }
 }
 
@@ -1615,7 +1781,6 @@ form .btn-box {
     header ul#main-nav {
         display: flex;
         padding: 8px;
-        border-radius: 30px;
     }
     
     header ul a {
@@ -1634,37 +1799,17 @@ form .btn-box {
     
     .hero {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 90px 5% 50px;
-        min-height: 100vh;
+        padding: 100px 5% 50px;
     }
     
     .hero-info {
         max-width: 90%;
         text-align: center;
-        margin-bottom: 40px;
-        padding: 0;
     }
     
     .skills-video-box {
         max-width: 80%;
-        height: 280px;
-        margin: 0;
-    }
-    
-    .info-cards {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    .project-card {
-        flex-direction: column;
-    }
-    
-    .project-vidbox,
-    .project-info {
-        width: 100%;
-        max-width: 100%;
+        height: 250px;
     }
     
     .about-content {
@@ -1674,6 +1819,19 @@ form .btn-box {
     
     .about-text {
         text-align: center;
+    }
+    
+    .project-card {
+        flex-direction: column;
+        padding: 25px;
+    }
+    
+    .project-vidbox,
+    .project-info {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
     }
 }
 
@@ -1698,41 +1856,24 @@ form .btn-box {
     .hero {
         flex-direction: column;
         padding: 100px 5% 50px;
-        min-height: 100vh;
     }
     
     .hero-info {
-        max-width: 100%;
         text-align: center;
-        padding: 0;
-        margin-bottom: 30px;
-    }
-    
-    .hero-info h1 {
-        font-size: 35px;
-        line-height: 1.3;
     }
     
     .skills-video-box {
         max-width: 90%;
-        height: 250px;
-        margin: 0 auto;
+        height: 200px;
     }
     
-    .info-section,
-    .my-project,
-    .skills-section,
-    .contact-section,
-    .experience-section,
-    .education-section,
-    .certifications-section,
-    .extracurriculars-section {
-        width: 95%;
-        padding: 30px 15px;
+    .about-content {
+        flex-direction: column;
+        text-align: center;
     }
     
-    .info-cards {
-        grid-template-columns: 1fr;
+    .about-text {
+        text-align: center;
     }
     
     .project-card {
@@ -1746,9 +1887,6 @@ form .btn-box {
         max-width: 100%;
         padding: 0;
         text-align: center;
-    }
-    
-    .project-info {
         align-items: center;
     }
     
@@ -1760,15 +1898,16 @@ form .btn-box {
         padding-left: 40px;
     }
     
-    form {
-        width: 95%;
-    }
-    
     .footer {
         flex-direction: column;
         height: auto;
         padding: 20px;
         gap: 15px;
+    }
+    
+    #running-cat {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -1776,10 +1915,6 @@ form .btn-box {
 @media screen and (max-width: 479px) {
     header {
         padding: 10px 15px;
-    }
-    
-    header .left h2 {
-        font-size: 1em;
     }
     
     header ul#main-nav {
@@ -1797,69 +1932,34 @@ form .btn-box {
     .hero {
         flex-direction: column;
         padding: 90px 3% 40px;
-        min-height: 100vh;
     }
     
     .hero-info {
-        max-width: 100%;
         text-align: center;
-        padding: 0;
-        margin-bottom: 30px;
-    }
-    
-    .hero-info h1 {
-        font-size: 28px;
-        line-height: 1.3;
-    }
-    
-    .hero-info p {
-        font-size: 14px;
-    }
-    
-    .hero-info.hero-info-title {
-        width: 90%;
-        max-width: 240px;
     }
     
     .skills-video-box {
         max-width: 95%;
-        height: 220px;
-        margin: 0 auto;
-        padding: 15px;
+        height: 180px;
+        padding: 10px;
     }
     
     .computer-screen {
-        font-size: 0.75em;
+        font-size: 0.65em;
     }
     
-    .scroll-down {
-        bottom: 3%;
+    .about-content {
+        flex-direction: column;
+        text-align: center;
     }
     
-    .info-section,
-    .my-project,
-    .skills-section,
-    .contact-section,
-    .experience-section,
-    .education-section,
-    .certifications-section,
-    .extracurriculars-section {
-        width: 98%;
-        padding: 20px 10px;
+    .about-text {
+        text-align: center;
     }
     
-    .section-title {
-        font-size: 25px;
-        margin-bottom: 30px;
-    }
-    
-    .info-cards {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .card {
-        padding: 20px;
+    .profile-photo-container {
+        width: 200px;
+        height: 200px;
     }
     
     .project-card {
@@ -1872,6 +1972,11 @@ form .btn-box {
         min-width: unset;
     }
     
+    .project-vidbox img,
+    .project-vidbox video {
+        height: 200px;
+    }
+    
     .project-info {
         width: 100%;
         padding: 0;
@@ -1879,54 +1984,22 @@ form .btn-box {
         align-items: center;
     }
     
-    .project-info h1 {
-        font-size: 20px;
-    }
-    
-    .skills-image {
-        width: 200px;
-        height: 200px;
-    }
-    
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        gap: 10px;
-    }
-    
-    .skill-card {
-        min-height: 80px;
-        padding: 1rem;
-        font-size: 12px;
     }
     
     .timeline-item {
         padding-left: 35px;
     }
     
-    .timeline-item::before {
-        left: -8px;
-        width: 16px;
-        height: 16px;
-    }
-    
-    form {
-        width: 100%;
-    }
-    
     .footer {
         flex-direction: column;
-        height: auto;
         padding: 15px;
         gap: 10px;
     }
     
     .slider {
-        width: 100%;
         --width: 60px;
         --height: 60px;
-    }
-    
-    .slider .list .item {
-        margin: 0 5px;
     }
 }

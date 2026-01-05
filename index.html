@@ -833,5 +833,58 @@ function showMessage(event) {
             });
         });
     </script>
+    <script>
+// ========================================
+// RUNNING CAT EASTER EGG
+// ========================================
+/*document.addEventListener('DOMContentLoaded', function() {
+    // Create cat element
+    const cat = document.createElement('div');
+    cat.id = 'running-cat';
+    cat.innerHTML = '🐱';
+    cat.style.fontSize = '40px';
+    document.body.appendChild(cat);
+    
+    // Create message element
+    const catMessage = document.createElement('div');
+    catMessage.className = 'cat-message';
+    catMessage.textContent = '😸 He is a really nice guy!';
+    document.body.appendChild(catMessage);
+    
+    // Cat click handler
+    cat.addEventListener('click', function(e) {
+        const rect = cat.getBoundingClientRect();
+        catMessage.style.left = rect.left + (rect.width / 2) - 100 + 'px';
+        catMessage.style.top = rect.top - 60 + 'px';
+        catMessage.classList.add('show');
+        
+        setTimeout(() => {
+            catMessage.classList.remove('show');
+        }, 1000);
+    });
+    
+    // ========================================
+    // FLOATING PARTICLES
+    // ========================================
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * window.innerWidth + 'px';
+        particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 10000);
+    }
+    
+    // Create particles periodically
+    setInterval(createParticle, 500);
+    for (let i = 0; i < 10; i++) {
+        setTimeout(createParticle, i * 500);
+    }
+    });*/
+    </script>
 </body>
 </html>
