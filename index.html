@@ -994,6 +994,15 @@ function showMessage(event) {
         });
 
         </script>
+        <script>
+            const video = document.querySelector('video');
+            video.addEventListener('click', () => video.play()); // user-initiated play
+            window.addEventListener('load', () => {
+                video.muted = true; // ensure muted
+                video.play().catch(() => console.log('User interaction needed'));
+            });
+        </script>
+
         
 
 </body>
