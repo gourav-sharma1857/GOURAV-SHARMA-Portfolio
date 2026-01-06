@@ -39,24 +39,110 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="box-icons">
-                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=jrjtXPWHxvRZjxvZXwrGrvWJHZkMrSJhbQHMxgggtdtQhFwQtQPkMfMMwjMsNQdmtndQCbCQ" target="_blank" rel="noopener" aria-label="Email">
-                    <p><i class='bx bxl-gmail'></i></p>
+                <!-- Social Icons -->
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSHxjWFDmMRMjbkhNGCVqRRVtPWjjtkjXBhxgLbWGhQHrHvpwWFGRCGrzdDKXLRWrNtfKWxH" target="_blank" class="social-icon" aria-label="Email">
+                    <i class='bx bxl-gmail'></i>
                 </a>
-                <a href="https://github.com/gourav-sharma1857" target="_blank" rel="noopener" aria-label="GitHub">
-                    <p><i class='bx bxl-github'></i></p>
+
+                <a href="https://github.com/gourav-sharma1857" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+                    <i class='bx bxl-github'></i>
                 </a>
-                <a href="https://www.linkedin.com/in/gourav-sharma-3b2558281/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <p><i class='bx bxl-linkedin-square'></i></p>
+
+                <a href="https://www.linkedin.com/in/gourav-sharma-3b2558281/ "target=_blank rel="noopener" class="social-icon" aria-label="LinkedIn">
+                    <i class='bx bxl-linkedin-square'></i>
                 </a>
-                <a href="images/Gourav_Sharma_Resume.pdf" download
-                    class="resume-btn">
-                    Resume <i class='bx bx-download'></i>
+
+                <!-- Resume Button -->
+                <div class="resume-wrapper">
+                    <button class="resume-main-btn">
+                        Resume <i class='bx bx-chevron-down'></i>
+                    </button>
+
+                    <div class="resume-dropdown">
+                        <a href="images/Gourav_Sharma_Resume.pdf" target="_blank">
+                            👁 View Resume
+                        </a>
+                        <a href="images/Gourav_Sharma_Resume.pdf" download>
+                            ⬇ Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button id="icon-toggle" aria-label="Toggle social icons">
+                ▼
+            </button>
+
+            <div class="mobile-icon-menu">
+                <a href="https://github.com/gourav-sharma1857" title="Github" target="_blank" rel="noopener" ><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/gourav-sharma-3b2558281/" title="Linkedin" target="_blank" rel="noopener" ><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSHxjWFDmMRMjbkhNGCVqRRVtPWjjtkjXBhxgLbWGhQHrHvpwWFGRCGrzdDKXLRWrNtfKWxH" title="Email" rel="noopener"  target="_blank"><i class='bx bxl-gmail'></i></a>
+                <a href="images/Gourav_Sharma_Resume.pdf" target="_blank" title="View resume">
+                            👁 
+                </a>
+                <a href="images/Gourav_Sharma_Resume.pdf" download title="Download resume">
+                            ⬇ 
                 </a>
             </div>
+
+
             <!-- Mobile Menu Toggle Button (Hamburger) -->
             <div id="mobile-menu-toggle">
                 <i class='bx bx-menu'></i>
             </div>
+            <style>
+/* Container for the mobile icon menu */
+.mobile-icon-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #222;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+
+/* Icons inside the menu */
+.mobile-icon-menu a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+/* Show toggle button only on small screens */
+#icon-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Media query for small screens (<1024px) */
+@media screen and (max-width: 1023px) {
+    .box-icons {
+        display: none; /* hide desktop icons */
+    }
+    #icon-toggle {
+        display: block;
+    }
+}
+</style>
+
+<script>
+// Toggle mobile icon menu
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("icon-toggle");
+    const mobileMenu = document.querySelector(".mobile-icon-menu");
+
+    toggleBtn.addEventListener("click", () => {
+        mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+    });
+});
+</script>
+
         </header>
 
         <!-- Mobile Navigation Overlay (Initially hidden) -->
@@ -886,5 +972,29 @@ function showMessage(event) {
     }
     });*/
     </script>
+    <script>
+        document.addEventListener('click', function (e) {
+            const resumeWrapper = document.querySelector('.resume-wrapper');
+            const dropdown = document.querySelector('.resume-dropdown');
+
+            if (resumeWrapper.contains(e.target)) {
+                dropdown.classList.toggle('show');
+            } else {
+                dropdown.classList.remove('show');
+            }
+        });
+        const iconToggle = document.getElementById("icon-toggle");
+        const iconMenu = document.querySelector(".mobile-icon-menu");
+
+        iconToggle.addEventListener("click", () => {
+            iconMenu.classList.toggle("active");
+
+            iconToggle.textContent =
+                iconMenu.classList.contains("active") ? "▲" : "▼";
+        });
+
+        </script>
+        
+
 </body>
 </html>
