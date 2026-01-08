@@ -965,9 +965,6 @@ header ul a.active {
     border-color: #72a1de;
 }
 
-/* ========================================
-   PROJECT CARDS - FIXED FOR MOBILE
-   ======================================== */
 .my-project {
     margin-bottom: 100px;
     gap: 50px;
@@ -1468,7 +1465,6 @@ form .btn-box {
     color: #fff;
 }
 
-/* Footer */
 .footer {
     padding: 40px;
     display: flex;
@@ -1911,11 +1907,7 @@ form .btn-box {
         padding: 20px;
         gap: 15px;
     }
-    
-    #running-cat {
-        width: 50px;
-        height: 50px;
-    }
+
 }
 
 /* Small Mobile (< 480px) */
