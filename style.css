@@ -701,6 +701,7 @@ header ul a.active {
    ======================================== */
 .info-section,
 .my-project,
+.leetcode-section,
 .skills-section,
 .contact-section,
 .experience-section,
@@ -1606,6 +1607,17 @@ form .btn-box {
 }
 
 .content-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.leetcode-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.leetcode-section.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
