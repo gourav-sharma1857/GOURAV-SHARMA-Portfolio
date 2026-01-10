@@ -1849,6 +1849,21 @@ form .btn-box {
         align-items: center;
     }
 }
+@media (max-width: 768px) {
+    .back-vid {
+        display: none;
+    }
+
+    body {
+        background: black;
+    }
+}
+
+#projects .autoBlur {
+    filter: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+}
 
 /* Mobile (480px - 767px) */
 @media screen and (min-width: 480px) and (max-width: 767px) {
