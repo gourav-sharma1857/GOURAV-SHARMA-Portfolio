@@ -907,27 +907,14 @@ header ul a.active {
     border-color: rgba(114, 161, 222, 0.5);
 }
 
-.project-vidbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 500px;
-    min-width: 250px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    flex-shrink: 0;
-}
-
-.project-vidbox img,
-.project-vidbox video {
-    object-fit: cover;
-    width: 100%;
-    height: 250px;
-    border-radius: 20px;
-    transition: all 0.5s ease;
-    box-shadow: 0 0 15px lightgray;
+.project-vidbox,
+.project-vidbox video,
+.project-vidbox img {
+    filter: none !important;
+    -webkit-filter: blur(0px) !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important; 
+    opacity: 1 !important;
 }
 
 .project-card .project-vidbox:hover img,
