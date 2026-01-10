@@ -1062,6 +1062,22 @@ function showMessage(event) {
                 }
             });
         </script>
+        <script>
+            let resizeTimeout;
+
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    updateActiveNavLink?.();
+
+                    if (window.innerWidth > 1023) {
+                        document.querySelector('.mobile-icon-menu')?.classList.remove('active');
+                        document.getElementById('mobile-nav-overlay')?.classList.remove('active');
+                    }
+                }, 150);
+            });
+        </script>
+
 
         
 

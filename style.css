@@ -8,13 +8,11 @@ body {
     min-height: 100vh;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
-/* ========================================
-   CUSTOM SCROLLBAR - ULTRA COOL
-   ======================================== */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -42,88 +40,6 @@ html {
     scrollbar-color: #72a1de #0a0014;
 }
 
-/* ========================================
-   RUNNING CAT EASTER EGG
-   ======================================== */
-#running-cat {
-    position: fixed;
-    bottom: 20px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    z-index: 9999;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-    animation: catRun 15s linear infinite;
-}
-
-#running-cat:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-}
-
-@keyframes catRun {
-    0% {
-        left: -100px;
-        transform: scaleX(1);
-    }
-    48% {
-        left: calc(100% - 60px);
-        transform: scaleX(1);
-    }
-    50% {
-        left: calc(100% - 60px);
-        transform: scaleX(-1);
-    }
-    98% {
-        left: -100px;
-        transform: scaleX(-1);
-    }
-    100% {
-        left: -100px;
-        transform: scaleX(1);
-    }
-}
-
-/* Cat message tooltip */
-.cat-message {
-    position: fixed;
-    background: linear-gradient(135deg, #72a1de, #44cbda);
-    color: #000;
-    padding: 15px 25px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    z-index: 10000;
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.cat-message.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cat-message::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #44cbda;
-}
-
-/* ========================================
-   FLOATING PARTICLES BACKGROUND
-   ======================================== */
 .particle {
     position: fixed;
     width: 4px;
@@ -1867,6 +1783,22 @@ form .btn-box {
 
 /* Mobile (480px - 767px) */
 @media screen and (min-width: 480px) and (max-width: 767px) {
+
+    .back-vid {
+        display: none !important;
+    }
+
+    body, .container {
+        background-color: #000;
+    }
+
+    .project-vidbox,
+    .project-vidbox video,
+    .project-vidbox img {
+        filter: none !important;
+        opacity: 1 !important;
+        backdrop-filter: none !important;
+    }
     header {
         padding: 15px;
     }
@@ -1939,6 +1871,21 @@ form .btn-box {
 
 /* Small Mobile (< 480px) */
 @media screen and (max-width: 479px) {
+     .back-vid {
+        display: none !important;
+    }
+
+    body, .container {
+        background-color: #000;
+    }
+
+    .project-vidbox,
+    .project-vidbox video,
+    .project-vidbox img {
+        filter: none !important;
+        opacity: 1 !important;
+        backdrop-filter: none !important;
+    }
     header {
         padding: 10px 15px;
     }
