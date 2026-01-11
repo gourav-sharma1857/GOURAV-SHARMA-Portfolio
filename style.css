@@ -1620,9 +1620,7 @@ form .btn-box {
     box-shadow: 0 8px 25px rgba(114, 161, 222, 0.5);
 }
 
-/* ============================================
-   RESPONSIVE MEDIA QUERIES
-   ============================================ */
+
 
 /* Large Desktop (1400px+) */
 @media screen and (min-width: 1400px) {
